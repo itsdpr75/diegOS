@@ -1,4 +1,4 @@
-; esto es un archivo compartido para el bootloader y el kernel, creo
+; las funciones de mostrar texto son comunes en el bootloader y en el kernel, por lo que las he metido aqui, tanto el bootloader como el kernel necesitan poder acceder a este archivo para mostrar el sistema
 print_string:
     lodsb
     or al, al
