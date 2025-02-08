@@ -1,6 +1,8 @@
 # diegOS
 
-Un sistema operativo echo desde 0, construido en 16 bits, solo texto
+Un sistema operativo echo desde 0, construido en 16 bits, solo texto, no busca ser nada, es solo un proyecto para saber como funcionan los sistemas operativos por dentro.
+
+Este SO estaba pensado para ser modular, de forma que puedas añadir un modulo para ejecutar codigo C
 
 # Sistema de archivos
 
