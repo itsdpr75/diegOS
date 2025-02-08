@@ -1,6 +1,8 @@
 bits 16
 org 0x7C00
 
+%include "lib.asm"
+
 start:
     ; Inicializar segmentos
     cli                 ; Deshabilitar interrupciones durante la configuración
@@ -59,17 +61,6 @@ disk_error:
     int 0x16            ; Esperar tecla
     int 0x19            ; Reiniciar
 
-; Función para imprimir cadena
-print_string:
-    lodsb               ; Cargar siguiente carácter
-    or al, al           ; ¿Es cero?
-    jz .done
-    mov ah, 0x0E        ; Función de teletipo
-    mov bx, 0x0007      ; Página 0, color gris
-    int 0x10            ; Llamada a BIOS
-    jmp print_string
-.done:
-    ret
 
 ; Datos
 boot_drive  db 0
