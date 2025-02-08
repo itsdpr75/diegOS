@@ -56,3 +56,17 @@ exconf\ {configuraciones importantes de dispositivos y cosas externas (todo lo a
 
 
 no te lo tomes enserio, es solo que me distraje de hacer tarea.
+
+#Requisitos para usar build.sh:
+
+nasm
+
+dd (ya viene en el paquete coreutils)
+
+stat (ya viene en el paquete coreutils)
+
+genisoimage (para build.sh)
+
+xorriso (para xbuild.sh)
+
+qemu (opcional, al finalizar la compilacion se ejecutara una maquina virtual)
