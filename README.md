@@ -57,7 +57,7 @@ exconf\ {configuraciones importantes de dispositivos y cosas externas (todo lo a
 
 no te lo tomes enserio, es solo que me distraje de hacer tarea.
 
-#Requisitos para usar build.sh:
+# Requisitos para usar build.sh:
 
 nasm
 
