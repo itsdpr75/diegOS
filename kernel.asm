@@ -14,7 +14,7 @@ start:
     mov ds, ax
     mov es, ax
     mov ss, ax
-    mov sp, 0xFFF0      ; establecer stack, no se que es el stack, pero creo que es importante
+    mov sp, 0xFFF0      ; establecer stack, (es la memoria temporal para las funciones y datos locales)
 
     ; limpiar pantalla
     mov ah, 0x00        ; funcion para establecer modo de video
@@ -35,52 +35,52 @@ start:
 
 ; bucle principal del kernel
 kernel_loop:
-    ; Mostrar prompt
+    ; mostrar prompt
     mov si, prompt
     call print_string
     
-    ; Obtener comando
+    ; obtener comando
     mov di, command_buffer
     call read_string
     
-    ; Procesar comando
+    ; procesar comando
     mov si, command_buffer
     call process_command
     
     jmp kernel_loop
 
-; Función para leer una cadena
+; funcion para leer una cadena
 read_string:
-    xor cx, cx          ; Contador de caracteres
+    xor cx, cx          ; contador de caracteres
 .loop:
-    mov ah, 0x00        ; Esperar tecla
+    mov ah, 0x00        ; esperar tecla
     int 0x16
     
-    cmp al, 0x0D        ; ¿Enter?
+    cmp al, 0x0D        ; accion enter
     je .done
     
-    cmp al, 0x08        ; ¿Retroceso?
+    cmp al, 0x08        ; accion borrar
     je .backspace
     
     cmp cx, MAX_CMD_LENGTH
     je .loop
     
-    stosb               ; Guardar caracter
+    stosb               ; guardar caracter
     inc cx
     
-    mov ah, 0x0E        ; Eco del caracter
+    mov ah, 0x0E        ; eco del caracter ???
     int 0x10
     
     jmp .loop
 
 .backspace:
-    test cx, cx         ; ¿Buffer vacío?
+    test cx, cx         ; buffer vacio
     jz .loop
     
-    dec di              ; Retroceder puntero
+    dec di              ; retroceder puntero
     dec cx
     
-    mov ah, 0x0E        ; Borrar caracter
+    mov ah, 0x0E        ; borrar caracter
     mov al, 0x08
     int 0x10
     mov al, ' '
@@ -91,18 +91,18 @@ read_string:
     jmp .loop
 
 .done:
-    mov al, 0           ; Terminar cadena
+    mov al, 0           ; terminar cadena
     stosb
     
-    mov ah, 0x0E        ; Nueva línea
+    mov ah, 0x0E        ; nueva linea
     mov al, 0x0D
     int 0x10
     mov al, 0x0A
     int 0x10
     ret
 
-; Variables y datos
+; variables y datos
 section .data
-    welcome_msg db 13, 10, "diegOS v0.1 - Sistema Operativo iniciado - Bienvenido", 13, 10, 13, 10, 0
+    welcome_msg db 13, 10, "diegOS v0.4 - Sistema Operativo iniciado - Bienvenido", 13, 10, 13, 10, 0
     prompt db "diegOS-> ", 0
     command_buffer times 256 db 0

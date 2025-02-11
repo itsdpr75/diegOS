@@ -12,7 +12,7 @@ BIOS/
 /usr/{nombre}/utemp {aqui se almacenan los datos y cosas temporales del usuario}
 /usr/{nombre}/udisk {discos internos solo para ese usuario}
 /utl {utilidades como el shel y programas esenciales}
-/cut {para absolutamente nada, es solo para pruevas de desarroyo y no deberia usarse para nada}
+/cut {para absolutamente nada, es solo para pruebas de desarroyo y no deberia usarse para nada}
 /tmp {archivos temporales de todo menos de un usuario}
 /emi {son cosas que van a ser emitidas al exterior, como archivos de un ftp o informacion}
 
