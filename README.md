@@ -4,6 +4,8 @@ Un sistema operativo echo desde 0, construido en 16 bits, solo texto
 
 # Sistema de archivos
 
+Este sistema de archivos se llama DSFS (Diegos Simple File System)
+
 Todo comienza en BIOS, es como el root, si vas a la izquierda (\BIOS) te sales a cosas que estan fuera de la pc, como puede ser un disco duro externo, por ejemplo el disco duro externo llamado "Expansion" estaria ubicado en la carpeta \Expansion\disk\local\BIOS es raro, ya se
 
 
