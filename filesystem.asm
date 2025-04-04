@@ -190,3 +190,5 @@ section .bss
     root_dir    resw 1   ; Índice del directorio raíz
     usr_dir     resw 1   ; Índice del directorio /usr
     temp_buffer resb MAX_PATH_LENGTH
+
+;esto nisiquiera esta completo
