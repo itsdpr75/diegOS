@@ -140,3 +140,5 @@ user_login:
 
 section .bss
     temp_buffer: resb 256
+
+;todavia me faltan cosas por hacer aqui :/, me las he dejado apuntadas con un todo, como aquel tio, espero no olvidarlo
