@@ -181,7 +181,7 @@ check_write_perm:
     cmp ax, -1
     je .no_perm
     
-    ; TODO: Implementar verificación real de permisos
+    ; TODO: esto todavia no esta echo, ya lo are despues (nunca)
     mov ax, 1
     
 .done:
