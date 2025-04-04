@@ -13,7 +13,7 @@ section .data
     
     ; Usuario root predeterminado
     root_user   db "root", 0
-    root_pass   db "admin123", 0  ; En un sistema real, esto sería un hash
+    root_pass   db "admin123", 0  ; En un sistema real, esto sería un hash, aclaro que ahora mismo paso de complicarme la vida mas de lo que ya lo estoy haciendo por no usar c o cualquier otra cosa :>
     
     ; Mensajes del sistema de usuarios
     msg_login_prompt db "Usuario: ", 0
